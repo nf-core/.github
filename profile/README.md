@@ -1,4 +1,4 @@
-![nf-core logo](https://raw.githubusercontent.com/nf-core/logos/master/nf-core-logos/nfcore-logo_logo_light.png#gh-light-mode-only) ![nf-core logo](https://raw.githubusercontent.com/nf-core/logos/master/nf-core-logos/nfcore-logo_logo_dark.png#gh-dark-mode-only)
+![nf-core logo](https://raw.githubusercontent.com/nf-core/logos/master/nf-core-logos/nf-core-logo.png#gh-light-mode-only) ![nf-core logo](https://raw.githubusercontent.com/nf-core/logos/master/nf-core-logos/nf-core-logo-darkbg.png#gh-dark-mode-only)
 
 ## Welcome to @nf-core!
 
