@@ -1,8 +1,8 @@
 ![nf-core logo](https://raw.githubusercontent.com/nf-core/logos/master/nf-core-logos/nf-core-logo.png#gh-light-mode-only) ![nf-core logo](https://raw.githubusercontent.com/nf-core/logos/master/nf-core-logos/nf-core-logo-darkbg.png#gh-dark-mode-only)
 
-## Welcome to @nf-core!
+## Welcome to [@nf-core](https://github.com/nf-core)!
 
-@nf-core is a community effort to collect a curated set of analysis pipelines built using Nextflow (@nextflow-io).
+[@nf-core](https://github.com/nf-core) is a community effort to collect a curated set of analysis pipelines built using Nextflow ([@nextflow-io](https://github.com/nextflow-io/)).
 
 Here's how to get started:
 
