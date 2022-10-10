@@ -6,8 +6,8 @@
 
 Here's how to get started:
 
-- 📚 See available pipelines on the [website](https://nf-co.re/).
-- 👩‍💻 Check out the [documentation](https://nf-co.re/).
-- 🙋‍♀️ Come and say hi on our [Slack](https://nf-co.re/join)!
+- 📚 See available pipelines on the [website](https://nf-co.re/pipelines).
+- 👩‍💻 Check out the [documentation](https://nf-co.re/docs/usage/introduction).
+- 🙋‍♀️ Come and say hi on our [Slack](https://nf-co.re/join/)!
 - 🍿 Tune in for [talks and events](https://nf-co.re/events), get involved!
 - 🌈 Please abide by our community [code of conduct](https://nf-co.re/code_of_conduct)
