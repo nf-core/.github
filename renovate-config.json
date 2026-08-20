@@ -1,0 +1,96 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":automergeDigest",
+    ":automergeBranch",
+    "schedule:monthly"
+  ],
+  "vulnerabilityAlerts": {
+    "labels": [
+      "security"
+    ],
+    "schedule": "at any time"
+  },
+  "prHourlyLimit": 3,
+  "platform": "github",
+  "onboarding": false,
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": [
+    "prIgnoreNotification"
+  ],
+  "rebaseWhen": "auto",
+  "reviewers": [
+    "edmundmiller"
+  ],
+  "assigneesFromCodeOwners": true,
+  "gitAuthor": "nf-core-bot <renovate@nf-co.re>",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 5am on the first day of the month"
+    ]
+  },
+  "pre-commit": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "registryUrls": [
+        "quay.io"
+      ]
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions",
+      "automerge": true,
+      "schedule": [
+        "before 9am"
+      ]
+    },
+    {
+      "automerge": true,
+      "schedule": [
+        "before 9am on Monday"
+      ],
+      "matchPackageNames": [
+        "/renovate-config-validator/"
+      ]
+    },
+    {
+      "matchManagers": [
+        "pre-commit"
+      ],
+      "groupName": "pre-commit hooks"
+    },
+    {
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchFileNames": [
+        "**/.pre-commit*config*.yaml"
+      ],
+      "groupName": "pre-commit npm dependencies",
+      "groupSlug": "pre-commit-npm"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "**/.pre-commit*config*.yaml"
+      ],
+      "matchStrings": [
+        "- (?<depName>[^@\\s]+)@(?<currentValue>[^\\s#]+)"
+      ],
+      "datasourceTemplate": "npm",
+      "versioningTemplate": "npm"
+    }
+  ]
+}
