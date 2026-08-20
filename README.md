@@ -9,6 +9,7 @@ Files for the @nf-core GitHub organisation.
 | `profile/README.md` | The org profile page shown at [github.com/nf-core](https://github.com/nf-core). See [Customizing your organization's profile](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile). |
 | `renovate-config.json` | The shared Renovate preset every nf-core repo extends. See below. |
 | `process_updaters.json5` | Optional Renovate custom managers for Nextflow process containers, conda, and pypi. Opt-in; nothing extends it by default. |
+| `AGENTS.md` | How to validate and test a preset change before merging it. |
 
 ## Renovate preset
 
@@ -55,10 +56,13 @@ only syntax sugar was lost. Presets referenced explicitly by name may use
 
 Edits here affect every nf-core repo, so open a PR rather than pushing to
 `master`. `renovate-config.json` must stay valid strict JSON — no comments, no
-trailing commas. To check it locally:
+trailing commas. Checking that takes two commands, because
+`renovate-config-validator` validates the schema but accepts JSON5 syntax in a
+`.json` file:
 
 ```bash
 npx --package renovate renovate-config-validator renovate-config.json
+python3 -c "import json; json.load(open('renovate-config.json'))"
 ```
 
 Renovate reads the preset from the **default branch**, so changes take effect as
