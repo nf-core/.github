@@ -6,7 +6,7 @@ Files for the @nf-core GitHub organisation.
 
 | Path | Purpose |
 | --- | --- |
-| `profile/README.md` | The org profile page shown at [github.com/nf-core](https://github.com/nf-core). |
+| `profile/README.md` | The org profile page shown at [github.com/nf-core](https://github.com/nf-core). See [Customizing your organization's profile](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile). |
 | `renovate-config.json` | The shared Renovate preset every nf-core repo extends. See below. |
 | `process_updaters.json5` | Optional Renovate custom managers for Nextflow process containers, conda, and pypi. Opt-in; nothing extends it by default. |
 
