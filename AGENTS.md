@@ -25,7 +25,8 @@ what let [nf-core/tools#4446](https://github.com/nf-core/tools/issues/4446)
 through: the config validated while the preset it pointed at 404ed for every
 public consumer.
 
-So run three checks, not one:
+Checks 1 and 2 run for you — `pre-commit` locally, and the `pre-commit` workflow
+on every PR. Run all three by hand when you want the answer before pushing:
 
 ```bash
 # 1. schema
@@ -41,9 +42,8 @@ curl -s -o /dev/null -w "%{http_code}\n" \
 # 404s — swap master for your branch name to check the file you actually edited.
 ```
 
-Check 2 is the one people skip. `renovate-config.json` must stay strict JSON
-because auto-discovery only probes the `.json` extension — nothing in this repo
-enforces that, and the filename gives no warning.
+Check 3 is the one nothing can automate: CI validates the file in the PR, but
+only a fetch of the default branch proves consumers can actually read it.
 
 ## Test before merging
 
@@ -76,10 +76,10 @@ npm i --prefix /tmp/rnv renovate   # then /tmp/rnv/node_modules/.bin/renovate
 
 ## Open a PR
 
-`master` has no branch protection, no required checks, and no CODEOWNERS, so a
-direct push will succeed and go live unreviewed. Open a PR anyway — the
-convention is the only guardrail this repo has. Tightening that is tracked in
-[nf-core/ops#215](https://github.com/nf-core/ops/issues/215).
+`master` and `main` require a PR with one approving review. Members of the `core`
+team can bypass that ruleset, so a direct push from `core` will succeed — open a
+PR regardless. The preset is read by every nf-core repo, which is more reach than
+an unreviewed push should have.
 
 ## Scope
 

@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/renovatebot/pre-commit-hooks
+    rev: 42.32.1
+    hooks:
+      - id: renovate-config-validator
+        files: ^(renovate-config\.json|process_updaters\.json5)$
+
+  # The validator above checks the schema, but accepts comments and trailing
+  # commas in a .json file. Renovate's org-preset auto-discovery only probes the
+  # .json extension, so renovate-config.json has to be strict JSON or repos
+  # silently stop inheriting it.
+  - repo: local
+    hooks:
+      - id: renovate-config-strict-json
+        name: renovate-config.json is strict JSON
+        language: system
+        files: ^renovate-config\.json$
+        entry: python3 -c "import json,sys; [json.load(open(f)) for f in sys.argv[1:]]"
