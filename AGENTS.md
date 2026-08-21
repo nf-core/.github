@@ -25,8 +25,10 @@ what let [nf-core/tools#4446](https://github.com/nf-core/tools/issues/4446)
 through: the config validated while the preset it pointed at 404ed for every
 public consumer.
 
-Checks 1 and 2 run for you — `pre-commit` locally, and the `pre-commit` workflow
-on every PR. Run all three by hand when you want the answer before pushing:
+Checks 1 and 2 run for you — `prek run --all-files` locally, and the `Lint`
+workflow on every PR. nf-core uses [prek](https://github.com/j178/prek) rather
+than `pre-commit` itself; it reads the same `.pre-commit-config.yaml`. Run all
+three by hand when you want the answer before pushing:
 
 ```bash
 # 1. schema

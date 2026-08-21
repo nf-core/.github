@@ -13,6 +13,6 @@ repos:
     hooks:
       - id: renovate-config-strict-json
         name: renovate-config.json is strict JSON
-        language: system
+        language: python
         files: ^renovate-config\.json$
         entry: python3 -c "import json,sys; [json.load(open(f)) for f in sys.argv[1:]]"
