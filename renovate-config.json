@@ -55,6 +55,16 @@
       ]
     },
     {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "nf-core/**",
+        "seqeralabs/**"
+      ],
+      "pinDigests": false
+    },
+    {
       "automerge": true,
       "schedule": [
         "before 9am on Monday"
